@@ -12,9 +12,15 @@ controller.start();
 
 const input        = document.getElementById('task-input');
 const addBtn       = document.getElementById('add-task-btn');
+const addUrgentBtn = document.getElementById('add-urgent-btn');
 
 addBtn.addEventListener('click', () => {
   if (controller.addTask(input.value)) {
+    input.value = '';
+  }
+});
+addUrgentBtn.addEventListener('click', () => {
+  if (controller.addUrgentTask(input.value)) {
     input.value = '';
   }
 });
